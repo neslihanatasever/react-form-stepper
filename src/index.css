@@ -9,4 +9,7 @@
     .textarea {
         @apply rounded py-2.5 p-4 outline-none border border-zinc-400 text-sm focus:border-black resize-none
     }
+    .button {
+        @apply h-10 rounded bg-black text-white text-sm
+    }
 }
