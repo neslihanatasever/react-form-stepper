@@ -1,9 +1,11 @@
-import { Formik, Form, Field } from "formik";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import { stepperValidation } from "./validations/stepper-validation";
 
 function App() {
   return (
     <div>
       <Formik
+      validationSchema={stepperValidation}
         initialValues={{
           step: 1,
           lastStep: 3,
@@ -36,30 +38,45 @@ function App() {
 
               {values.step == 1 && (
                 <div className="grid  gap-2.5">
+                  <div>
                   <Field name="name" className="input" placeholder="Name" />
+                  <ErrorMessage name="name" component="small" className="block text-xs text-red-600 mt-1" />
+                  </div>
+                  <div>
                   <Field
                     name="surname"
                     className="input"
                     placeholder="Surname"
                   />
+                  <ErrorMessage name="surname" component="small" className="block text-xs text-red-600 mt-1" />
+                  </div>
                 </div>
               )}
 
               {values.step == 2 && (
                 <div className="grid  gap-2.5">
+                  <div>
                   <Field name="age" className="input" placeholder="Age" />
+                  <ErrorMessage name="age" component="small" className="block text-xs text-red-600 mt-1" />
+                  </div>
+                  <div>
                   <Field name="job" className="input" placeholder="Job" />
+                  <ErrorMessage name="job" component="small" className="block text-xs text-red-600 mt-1" />
+                  </div>
                 </div>
               )}
 
               {values.step == 3 && (
                 <div className="grid  gap-2.5">
+                  <div>
                   <Field
                     name="about"
                     component="textarea"
                     className="textarea"
                     placeholder="About"
                   />
+                  <ErrorMessage name="about" component="small" className="block text-xs text-red-600 mt-1" />
+                  </div>
                 </div>
               )}
 
