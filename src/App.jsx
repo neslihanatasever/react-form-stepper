@@ -17,10 +17,14 @@ function App() {
           console.log("values", values);
         }}
       >
-        {({ values }) => {
-          const prevHandle = (e) => {};
+        {({ values, setFieldValue }) => {
+          const prevHandle = (e) => {
+            setFieldValue("step", values.step - 1)
+          };
 
-          const nextHandle = (e) => {};
+          const nextHandle = (e) => {
+            setFieldValue("step", values.step + 1)
+          };
 
           return (
             <Form className="w-[500px] py-5 mx-auto">
