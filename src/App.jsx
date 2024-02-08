@@ -16,13 +16,18 @@ function App() {
           console.log("values", values);
         }}
       >
-        {(values) => (
-          <Form>
+        {({values}) => (
+          <Form className="w-[500px] py-5 mx-auto">
+
+            <header className="mb-4">
+              <h3 className="text-lg font-medium text-zinc-700">Adım {values.step} </h3>
+            </header>
+
             {values.step === 1 && (
-              <>
-                <Field name="name" />
-                <Field name="surname" />
-              </>
+              <div className="grid  gap-2.5">
+                <Field name="name" className="input" placeholder="Name"/>
+                <Field name="surname" className="input" placeholder="Surname"/>
+              </div>
             )}
 
           </Form>
